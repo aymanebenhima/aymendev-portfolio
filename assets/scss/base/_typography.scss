@@ -1,0 +1,99 @@
+body {
+  font-family: $body-font;
+  font-weight: $font-regular;
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+.heading {
+  font-size: $biggest-font-size;
+  font-weight: $font-thin;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  margin-bottom: $mb-4;
+  animation: moveInRight 1s ease-out;
+
+  .medium {
+    font-weight: $font-medium;
+  }
+  .bold {
+    font-weight: $font-bold;
+  }
+
+  @include respond(phone) {
+    letter-spacing: 1rem;
+  }
+}
+
+.btn {
+  background-color: var(--container-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: .4rem;
+  font-family: $body-font;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 1.8rem 5rem;
+  cursor: pointer;
+  transition: all .2s;
+  animation: moveInBottom 1.5s ease-out;
+
+  &:hover {
+      background-color: var(--stroke-color);
+      color: var(--title-color);
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.heading-primary {
+  font-size: $h1-font-size;
+  font-weight: $font-bold;
+  color: var(--title-color);
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: $mb-3;
+}
+
+.heading-secondary {
+  font-size: $h2-font-size;
+}
+
+/* Glitch text */
+
+.glitch {
+	position: relative;
+	color: white;
+	font-size: 4em;
+	letter-spacing: .5em;
+	/* Animation provies a slight random skew. Check bottom of doc
+	for more information on how to random skew. */
+	animation: glitch-skew 1s infinite linear alternate-reverse;
+
+	// Creates a copy before our text.
+	&::before{
+		// Duplicates our text with the mixin.
+		@include glitchCopy;
+		// Scoots text slightly to the left for the color offset.
+		left: 2px;
+		// Creates the color 'shadow' that happens on the glitch.
+		text-shadow: -2px 0 #ff00c1;
+		/* Creates an initial clip for our glitch. This works in
+		a typical top,right,bottom,left fashion and creates a mask
+		to only show a certain part of the glitch at a time. */
+		clip: rect(44px, 450px, 56px, 0);
+		/* Runs our glitch-anim defined below to run in a 5s loop, infinitely,
+		with an alternating animation to keep things fresh. */
+		animation: glitch-anim 5s infinite linear alternate-reverse;
+	}
+
+	// Creates a copy after our text. Note comments from ::before.
+	&::after {
+		@include glitchCopy;
+		left: -2px;
+		text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+		animation: glitch-anim2 1s infinite linear alternate-reverse;
+	}
+}
