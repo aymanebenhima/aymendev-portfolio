@@ -7,7 +7,12 @@
         I am a <span class="job__title--option"><TypeWriter :typeArray="['Full Stack', 'Software', 'Frontend', 'Backend', 'Web', 'Mobile']" /></span> Developer
       </div>
     </div>
-    <Nuxt class="container__wrapper" />
+    <transition
+      name="fade"
+      mode="in-out"
+    >
+      <Nuxt class="container__wrapper" />
+    </transition>
     <Social />
     <Footer />
   </div>
@@ -19,13 +24,13 @@ export default {}
 
 <style lang="scss">
 .container {
+  position: relative;
   background-color: var(--bg-color);
   background-image: url("~/assets/img/bg.svg");
   background-blend-mode: screen;
   background-repeat: no-repeat;
   background-size: auto 100vh;
   background-position-x: 75vw;
-
   &__wrapper {
     height: 70vh;
     grid-column: col-start 2 / col-end 6;
@@ -53,5 +58,16 @@ export default {}
       }
     }
   }
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(-2rem);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all .4s ease;
+  overflow: hidden;
 }
 </style>
