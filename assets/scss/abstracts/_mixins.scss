@@ -20,6 +20,36 @@
   }
 }
 
+/* 404 Animation */
+@mixin animation($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin animation-use($name) {
+  -webkit-animation: $name $time infinite linear;
+  -moz-animation: $name $time infinite linear;
+  -o-animation: $name $time infinite linear;
+  animation: $name $time infinite linear;
+}
+
+@mixin rotate($val) {
+  -webkit-transform: rotate($val);
+  -ms-transform: rotate($val);
+  transform: rotate($val);
+}
+
+
 /* Glitch copy */
 @mixin glitchCopy {
   content: attr(data-text);
