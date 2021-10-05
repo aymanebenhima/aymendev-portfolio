@@ -1,26 +1,27 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
-/*   loadingIndicator: {
-    name: 'rotating-plane',
+  loadingIndicator: {
+    name: 'circle',
     color: '#eebbc3',
-    background: '#232946'
-  }, */
-  loading: '~/components/LoadingBar.vue',
+    background: '#000',
+    continuous: true
+  },
+  // loading: '~/components/LoadingBar.vue',
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'portfolio',
+    title: 'Aymane Benhima | Full Stack Developer -- aymendev.me',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: "Hey, This is Aymane Benhima a full stack web and mobile developer who like using MEVN Stack and building awesome apps for fun!" },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -34,7 +35,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-
+    '@/plugins/tilt'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
