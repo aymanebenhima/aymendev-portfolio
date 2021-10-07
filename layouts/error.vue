@@ -1,23 +1,27 @@
 <template>
-  <div>
-    <div class="error__container">
-      <input type="checkbox" id="switch" />
-      <div class="ellipse"></div>
-      <div class="ray"></div>
-      <div class="head"></div>
-      <div class="neck"></div>
-      <div class="body">
-        <label for="switch"></label>
+  <div class="error">
+    <div class="lamp">
+      <div class="error__container">
+        <input type="checkbox" id="switch" />
+        <div class="ellipse"></div>
+        <div class="ray"></div>
+        <div class="head"></div>
+        <div class="neck"></div>
+        <div class="body">
+          <label for="switch"></label>
+        </div>
+      </div>
+      <div v-if="error.statusCode === 404" class="error__container">
+        <div class="msg msg_1">404</div>
+        <div class="msg msg_2">Page Not Found</div>
+      </div>
+      <div v-else class="error__container">
+        <div class="msg msg_2">An error occurred - {{ error.statusCode }}</div>
       </div>
     </div>
-    <div v-if="error.statusCode === 404" class="error__container">
-      <div class="msg msg_1">404</div>
-      <div class="msg msg_2">Page Not Found</div>
-    </div>
-    <div v-else class="error__container">
-      <div class="msg msg_2">An error occurred - {{ error.statusCode }}</div>
-    </div>
-    <NuxtLink to="/">Home page</NuxtLink>
+    <NuxtLink class="mb-6" to="/">
+      <Button>Back to Home</Button>
+    </NuxtLink>
   </div>
 </template>
 
@@ -29,12 +33,9 @@ export default {
 
 <style lang="scss" scoped>
 @import url(https://fonts.googleapis.com/css?family=Fjalla+One);
-$black: #000;
 $white: rgb(255, 254, 226);
 $l-grey: rgb(141, 142, 126);
-$grey: rgb(100, 100, 100);
 $d-grey: rgb(51, 51, 51);
-$yellow: rgb(255, 171, 43);
 $time: 9s;
 
 $c-width: 36vmin;
@@ -75,7 +76,13 @@ $c-height: 90vmin;
 
 @include message("first");
 @include message("second");
+.error {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.to-home {
 
+}
 .error__container {
   position: absolute;
   left: 50%;
@@ -126,7 +133,7 @@ $c-height: 90vmin;
     width: 0.4 * $c-width;
     height: 0.02 * $c-height;
     margin-left: 0.3 * $c-width;
-    background: $yellow;
+    background: var(--container-color);
   }
 
   .neck {
@@ -143,7 +150,7 @@ $c-height: 90vmin;
     width: 0.203 * $c-width;
     margin-left: 0.4 * $c-width;
     height: 0.24 * $c-height;
-    background: $grey;
+    background: var(--bg-color-sec);
   }
 
   label {
@@ -153,7 +160,7 @@ $c-height: 90vmin;
     width: 0.04 * $c-width;
     height: 0.04 * $c-height;
     border: 0.012 * $c-width solid $d-grey;
-    background: $yellow;
+    background: var(--container-color);
     border-radius: 10px;
     cursor: pointer;
   }
