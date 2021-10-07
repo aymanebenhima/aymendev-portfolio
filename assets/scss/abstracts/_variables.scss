@@ -5,15 +5,17 @@
 :root.light-theme {
     /*========== Light Colors ==========*/
     --bg-color: #d4d8f0;
+    --bg-color-sec: #CECFD5;
     --title-color: #232946;
     --text-color: #232946;
     --container-color: #eebbc3;
     --stroke-color: #121629;
 }
 
-:root{
+:root {
   /*========== Dark Colors ==========*/
   --bg-color: #232946;
+  --bg-color-sec: #53586F;
   --title-color: #fffffe;
   --text-color: #b8c1ec;
   --container-color: #eebbc3;
@@ -23,10 +25,10 @@
 /* Fonts */
 $body-font: 'Roboto', sans-serif;
 $biggest-font-size: 3rem;
-$h1-font-size: 1.5rem;
-$h2-font-size: 1.25rem;
-$h3-font-size: 1rem;
-$normal-font-size: .938rem;
+$h1-font-size: 2rem;
+$h2-font-size: 1.5rem;
+$h3-font-size: 1.25rem;
+$normal-font-size: 1rem;
 $small-font-size: .813rem;
 $smaller-font-size: .75rem;
 

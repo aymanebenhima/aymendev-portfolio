@@ -6,12 +6,41 @@ body {
 }
 
 .heading {
-  font-size: $biggest-font-size;
-  font-weight: $font-thin;
   text-transform: uppercase;
   letter-spacing: 1rem;
-  margin-bottom: $mb-4;
+  margin-bottom: $mb-3;
   animation: moveInRight 1s ease-out;
+
+  @include respond(phone) {
+    letter-spacing: .8rem;
+  }
+
+  &-primary {
+    font-size: $h1-font-size;
+    font-weight: $font-bold;
+    color: var(--title-color);
+    backface-visibility: hidden;
+
+    @include respond(phone) {
+      font-size: $h2-font-size;
+    }
+  }
+
+  &-secondary {
+    font-size: $h2-font-size;
+
+    @include respond(phone) {
+      font-size: $h3-font-size;
+    }
+  }
+
+  .thin {
+    font-weight: $font-thin;
+  }
+
+  .regular {
+    font-weight: $font-regular;
+  }
 
   .medium {
     font-weight: $font-medium;
@@ -20,27 +49,71 @@ body {
     font-weight: $font-bold;
   }
 
-  @include respond(phone) {
-    letter-spacing: 1rem;
+  .black {
+    font-weight: $font-black;
   }
 }
 
 .btn {
-  background-color: var(--container-color);
-  color: var(--bg-color);
-  border: none;
-  border-radius: .4rem;
-  font-family: $body-font;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  padding: 1.8rem 5rem;
-  cursor: pointer;
-  transition: all .2s;
-  animation: moveInBottom 1.5s ease-out;
+  &,
+  &:link,
+  &:visited {
+    background-color: var(--container-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: .4rem;
+    font-family: $body-font;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 1.5rem 5rem;
+    cursor: pointer;
+    transition: all .2s;
+    animation: moveInBottom 1.5s ease-out;
 
+    @include respond(tab-port) {
+      font-size: 1.25rem;
+      padding: 1.25rem 4.5rem;
+    }
+
+    @include respond(phone) {
+      font-size: 1rem;
+      padding: 1rem 4rem;
+    }
+  }
   &:hover {
       background-color: var(--stroke-color);
       color: var(--title-color);
+      transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: 0 .5rem 1rem rgba(var(--stroke-color), .15);
+    transform: translateY(0);
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $normal-font-size;
+    color: var(--text-color);
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid var(--text-color);
+    padding: .3rem;
+    transition: all .2s;
+  }
+
+  &:hover {
+      background-color: var(--text-color);
+      color: var(--stroke-color);
+      box-shadow: 0 1rem 2rem rgba(var(--stroke-color), .15);
+      transform: translateY(-2px);
+  }
+
+  &:active {
+      box-shadow: 0 .5rem 1rem rgba(var(--stroke-color), .15);
+      transform: translateY(0);
   }
 }
 
@@ -48,29 +121,21 @@ a {
   text-decoration: none;
 }
 
-.heading-primary {
-  font-size: $h1-font-size;
-  font-weight: $font-bold;
-  color: var(--title-color);
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  margin-bottom: $mb-3;
-}
-
-.heading-secondary {
-  font-size: $h2-font-size;
-}
-
 /* Glitch text */
 
 .glitch {
 	position: relative;
 	color: white;
-	font-size: 4em;
+	font-size: 5rem;
 	letter-spacing: .5em;
 	/* Animation provies a slight random skew. Check bottom of doc
 	for more information on how to random skew. */
 	animation: glitch-skew 1s infinite linear alternate-reverse;
+
+  @include respond(tab-port) {
+    font-size: 5rem;
+    letter-spacing: .3rem;
+  }
 
 	// Creates a copy before our text.
 	&::before{
