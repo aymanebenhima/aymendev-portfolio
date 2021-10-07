@@ -35,7 +35,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/tilt'
+    '@/plugins/tilt',
+    '@/plugins/vee-validate',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -45,6 +46,7 @@ export default {
   buildModules: [
     '@nuxtjs/style-resources',
     '@nuxtjs/fontawesome',
+    '@nuxtjs/dotenv'
   ],
   styleResources: {
     scss: [
@@ -59,9 +61,24 @@ export default {
   },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
+    ['nuxt-mail', {
+      message: {
+        to: process.env.GMAIL_USER,
+      },
+      smtp: {
+        host: 'smtp.gmail.com',
+        port: 465,
+        auth: {
+          user: process.env.GMAIL_USER,
+          pass: process.env.GMAIL_PASSWORD
+        }
+      },
+    }],
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    transpile: ['vee-validate'],
   }
 }
