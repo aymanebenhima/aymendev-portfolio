@@ -94,3 +94,47 @@ skew to change the 'thickness' of the glitch.*/
     }
   }
 }
+
+/* Loader */
+
+@keyframes loader-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Skeleton */
+
+@keyframes pulse-bg {
+  0% {
+    background: #eee;
+  }
+  50% {
+    background: #E6E7EA;
+  }
+  100% {
+    background: #CECFD5;
+  }
+}
+
+@keyframes pulse-text {
+  0% {
+    background: #EFF1FA;
+  }
+  50% {
+    background: #DFE3F6;
+  }
+  100% {
+    background: #CFD5F2;
+  }
+}
+
+/* Bounce animation */
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+/* 	40% {transform: translateY(-2.5rem);} */
+	60% {transform: translateY(-1rem);}
+}
