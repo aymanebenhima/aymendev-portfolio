@@ -1,20 +1,20 @@
 <template>
-  <article>
+  <div class="about__container">
     <header class="tabs">
-      <ul>
+      <ul class="tabs__nav-list">
         <li v-for="(tab, index) in tabs" :key="index">
-          <div class="nav-item"
-              :class="{ 'is-active': tab.isActive }"
+          <div class="tabs__nav-list__item"
+              :class="{ 'tabs__nav-list__item--active': tab.isActive }"
               @click="selectTab(tab)">
             {{ tab.name }}
           </div>
         </li>
       </ul>
     </header>
-    <section class="tabs-details">
+    <section class="tabs__details">
       <slot></slot>
     </section>
-  </article>
+  </div>
 </template>
 
 <script>
@@ -38,34 +38,91 @@
 </script>
 
 <style lang="scss" scoped>
+  .about__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
   .tabs {
-    margin: 0 1rem;
+    margin: 1.5rem 0;
+    position: relative;
+    width: 50%;
+    border-radius: 3rem;
+
+    @include respond(tab-port) {
+      width: 75%;
+    }
+    @include respond(phone) {
+      width: 100%;
+    }
+
+/*     overflow: hidden; */
+
+    &__nav-list {
+      position: relative;
+      list-style: none;
+      border-bottom: 1px solid #FFFFFE;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-around;
+
+      &__item {
+        font-size: $h1-font-size;
+        display: inline;
+        margin: 0 .4rem;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        color: var(--text-color);
+        font-weight: $font-light;
+        background: none;
+        border: 1px solid var(--stroke-color);
+        border-bottom: 0;
+        border-radius: .75rem .75rem 0 0;
+        padding: 0.1rem 3.5rem;
+        transition: all 240ms ease;
+        @include respond(tab-port) {
+          padding: 0.3rem 4.5rem;
+        }
+
+@include respond(phone) {
+          padding: 0.1rem 3.5rem;
+        }
+
+        &:not(&--active):hover {
+          color: var(--container-color);
+          transition: all .2s ease-in-out;
+        }
+
+        &--active {
+          background: var(--stroke-color);
+          color: var(--title-color);
+          font-weight: $font-medium;
+          transform: scale(1.05);
+          transition: all 360ms cubic-bezier(.53,.32,.22,1.07);
+        }
+      }
+
+    }
+
+    &__details {
+      padding: 1rem;
+      overflow: auto;
+    }
   }
-  .tabs-details {
-    padding: 10px;
-  }
-  ul {
+/*   ul {
     display: flex;
     justify-content: center;
-    list-style: none;
-    li:not(:last-child){
-      margin-right: 4rem;
-    }
+
     .nav-item {
+      position: relative;
       font-size: $h1-font-size;
       font-weight: $font-medium;
-      border-bottom: 2px solid var(--text-color);
+      width: 100%;
       cursor: pointer;
       transition: all .2s;
-      &:hover {
-        color: var(--container-color);
-        border-bottom: 2px solid var(--container-color);
-      }
-      &.is-active {
-        border-bottom: 2px solid var(--container-color);
-        color: var(--container-color);
-        transform: scale(1.3);
-      }
+
     }
-  }
+  } */
 </style>
