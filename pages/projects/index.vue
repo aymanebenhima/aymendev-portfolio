@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <p>This is project page</p>
+  <div class="projects">
+    <Card />
   </div>
 </template>
 
@@ -10,6 +10,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 
 </style>

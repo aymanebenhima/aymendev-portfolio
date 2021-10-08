@@ -115,11 +115,7 @@ export default {
         datasets: [
           {
             label: [
-              'Frontend',
-              'Backend',
-              'UI/UX',
-              'Devops',
-              'Problem solving'
+              'skill'
             ],
             data: [80, 65, 70, 50, 75],
             backgroundColor: "rgba(238, 187, 195, 0.3)",

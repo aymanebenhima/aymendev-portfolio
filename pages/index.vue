@@ -4,14 +4,23 @@
     aymendev
   </div>
   <h1 class="heading">
-    I <span class="medium">create</span> <span class="bold">websites</span> && <span class="bold">apps</span> that <span class="medium">enhance</span> your <span class="medium">business</span>
+    <span class="thin">I</span> <span class="regular">create</span> <span class="black">websites</span> <span class="thin">&&</span> <span class="black">apps</span> <span class="thin">that</span> <span class="medium">enhance</span> <span class="thin">your</span> <span class="medium">business</span>
   </h1>
-  <button class="btn home__btn">Hire me</button>
+  <nuxt-link to="/contact">
+    <Button>Hire me</Button>
+  </nuxt-link>
 </div>
 </template>
 
 <script>
-export default {}
+export default {
+  layout: 'home',
+  data() {
+    return {
+      quote: true
+    }
+  },
+}
 </script>
 
 <style lang="scss">
@@ -25,6 +34,10 @@ export default {}
     font-size: $biggest-font-size*2;
     font-weight: $font-black;
     text-transform: uppercase;
+
+    @include respond(tab-port) {
+      font-size: $biggest-font-size;
+    }
   }
 
   &__btn {
