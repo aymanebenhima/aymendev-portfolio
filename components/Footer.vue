@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <p class="paragraph">
-      Made with <font-awesome-icon   :icon="['fa','heart']"/> By Aymane Benhima using Vuejs & Nuxtjs
+      Made with &#x2764; By Aymane Benhima using Nuxtjs & ☕
     </p>
   </footer>
 </template>
