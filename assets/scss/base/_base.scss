@@ -80,7 +80,7 @@ body {
   }
 
   @include respond(tab-port) {
-    grid-template-rows: 5rem 4rem calc(100vh - 17rem) repeat(2, 4rem);
+    grid-template-rows: 4rem 4rem calc(100vh - 16rem) repeat(2, 4rem);
 /*     grid-template-columns: [social-start] 3rem [social-end full-start] minmax(
       3rem,
       1fr
