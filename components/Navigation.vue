@@ -1,7 +1,7 @@
 <template>
   <div>
   	<input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
-  	<label for="menu-icon"></label>
+  	<label for="menu-icon">&nbsp;</label>
   	<nav class="nav">
   		<ul class="pt-5" @click="checkboxToggle">
   			<li><NuxtLink to="/">Home</NuxtLink></li>
@@ -33,23 +33,28 @@ export default {
 .menu-icon:checked + label,
 .menu-icon:not(:checked) + label{
   position: fixed;
-  top: 63px;
-  right: 75px;
+  top: 6.3rem;
+  right: 7.5rem;
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 3rem;
+  height: 3rem;
   padding: 0;
   margin: 0;
   cursor: pointer;
   z-index: 10;
+
+  @include respond(tab-port) {
+    top: 4.3rem;
+    right: 4.5rem;
+  }
 }
 .menu-icon:checked + label:before,
 .menu-icon:not(:checked) + label:before{
   position: absolute;
   content: '';
   display: block;
-  width: 30px;
-  height: 20px;
+  width: 3rem;
+  height: 2rem;
   z-index: 20;
   top: 0;
   left: 0;
@@ -66,11 +71,11 @@ export default {
   position: absolute;
   content: '';
   display: block;
-  width: 22px;
-  height: 2px;
+  width: 2.2rem;
+  height: .2rem;
   z-index: 20;
-  top: 10px;
-  right: 4px;
+  top: 1rem;
+  right: .4rem;
   background-color: #ececee;
   margin-top: -1px;
   transition: width 100ms 1750ms ease,
@@ -81,7 +86,7 @@ export default {
 .menu-icon:checked + label{
 
   &:before{
-    top: 10px;
+    top: 1rem;
     transform: rotate(45deg);
     height: 2px;
     background-color: #ececee;
@@ -94,7 +99,7 @@ export default {
   }
 
   &:after{
-    width: 30px;
+    width: 3rem;
     margin-top: 0;
     right: 0;
     transform: rotate(-45deg);
@@ -107,23 +112,28 @@ export default {
 
 .nav{
   position: fixed;
-  top: 33px;
-  right: 50px;
+  top: 3.3rem;
+  right: 5rem;
   display: block;
-  width: 80px;
-  height: 80px;
+  width: 8rem;
+  height: 8rem;
   padding: 0;
   margin: 0;
   z-index: 9;
   overflow: hidden;
   box-shadow: 0 8px 30px 0 rgba(0,0,0,0.3);
-  background-color: #353746;
+  background-color: var(--bg-color-sec);
   animation: border-transform 7s linear infinite;
   transition: top 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
               right 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
               transform 250ms 1100ms ease,
               width 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1),
               height 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1);
+
+  @include respond(tab-port) {
+    right: 2rem;
+    top: 1rem;
+  }
 }
 
 .menu-icon:checked ~ .nav {
@@ -191,6 +201,10 @@ export default {
       transition: all 250ms linear;
       text-decoration: none;
 
+      @include respond(tab-port) {
+        font-size: 8vh;
+      }
+
       &:hover,
       &.nuxt-link-exact-active {
         text-decoration: none;
@@ -206,7 +220,7 @@ export default {
         margin-top: -1vh;
         width: 0;
         left: 0;
-        background-color: #353746;
+        background-color: var(--bg-color-sec);
         opacity: 0.8;
         transition: width 250ms linear;
       }
@@ -239,21 +253,4 @@ export default {
   }
 }
 
-
-
-@media screen and (max-width: 991px) {
-  .menu-icon:checked + label,
-  .menu-icon:not(:checked) + label{
-    right: 55px;
-  }
-  .logo {
-    left: 30px;
-  }
-  .nav{
-    right: 30px;
-  }
-  .nav ul li a{
-    font-size: 8vh;
-  }
-}
 </style>
