@@ -96,7 +96,7 @@ export default {
     top: 1rem;
 
     @include respond(tab-port) {
-      left: 0;
+      left: 2px;
     }
   }
 
