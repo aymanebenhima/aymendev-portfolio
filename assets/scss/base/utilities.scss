@@ -1,0 +1,43 @@
+/* utils classes */
+.mb-1 {
+  margin-bottom: $mb-1;
+}
+
+.mb-2 {
+  margin-bottom: $mb-2;
+}
+
+.mb-3 {
+  margin-bottom: $mb-3;
+}
+
+.mb-4 {
+  margin-bottom: $mb-4;
+}
+
+.mb-5 {
+  margin-bottom: $mb-5;
+}
+
+.mb-6 {
+  margin-bottom: $mb-6;
+}
+
+/* Loader */
+
+.loader-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.loader-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid var(--text-color);
+  border-color: var(--text-color) transparent var(--text-color) transparent;
+  animation: loader-ring 1.2s linear infinite;
+}
