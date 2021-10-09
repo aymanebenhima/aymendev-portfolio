@@ -6,7 +6,7 @@
           <p class="paragraph">
             Heey dear visitor, I am a Aymane Benhima, <br> an ambitious person who has developed a mature and responsible approach to any task I undertake, or situation that I am presented with. As a graduate with two years of experience in web development. I am excellent at working with others to achieve a certain objective on time and with excellence.
           </p>
-          <a href="#" class="btn-text">See my resume &rarr;</a>
+          <a href="https://drive.google.com/file/d/1p6IJ26CU--Kev_iotQAtMIX8IzMkWoyk/view?usp=sharing" target="_blank" rel="noopener" class="btn-text">See my resume &rarr;</a>
         </div>
         <div class="description mb-3">
           <p class="paragraph">
