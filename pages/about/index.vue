@@ -55,31 +55,32 @@
             <li> Angular 5+</li>
             <li> TypeScript</li>
             <li> jQuery</li>
+            <li> ReactJS / Redux / Next.js</li>
             <li> Ionic Framework</li>
             <li> SASS</li>
-            <li> anime.js</li>
+            <li> Gsap / anime.js</li>
             <li> Webpack</li>
-            <li> Bootstrap / Bulma</li>
+            <li> Bootstrap / Bulma / Tailwind Css</li>
           </ul>
         </div>
         <div class="description mb-3">
           <p class="about__title-primary">Backend dev</p>
-          <p class="about__title-secondary"></p>
+          <p class="about__title-secondary">Motivated and highly productive Backend Developer. Detail-oriented with strong skills in multi-tasking and efficient management. Adept at building and maintaining effective working relationships with co-workers and clients through outstanding interpersonal skills.</p>
           <ul class="about__items">
             <li> Laravel Framework</li>
+            <li> Node js Environment</li>
+            <li> Express Framework</li>
             <li> PHP</li>
-            <li> Lumen</li>
+            <li> Wordpress / WooCommerce</li>
             <li> OAuth</li>
             <li> JWT Authentificaction</li>
-            <li> CRON JOBS / Queue</li>
-            <li> Redis</li>
             <li> MySQL / MongoDB</li>
-            <li> Laravel ECOSYSTEM (Nova - Scout - Homestead - Echo - Voyager)</li>
+            <li> Laravel ECOSYSTEM (October - Voyager)</li>
           </ul>
         </div>
         <div class="description mb-3">
           <p class="about__title-primary">Tools dev</p>
-          <p class="about__title-secondary"></p>
+          <p class="about__title-secondary">&nbsp;</p>
           <ul class="about__items">
             <li> Git</li>
             <li> Docker</li>
