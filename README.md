@@ -1,5 +1,7 @@
 # portfolio
 
+I built this frontend project to display all my works.
+
 ## Build Setup
 
 ```bash
