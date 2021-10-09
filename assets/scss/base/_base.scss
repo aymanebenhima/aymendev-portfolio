@@ -26,6 +26,7 @@ html {
     font-size: 75%; //1rem = 12, 12/16
   }
 }
+
 /* width */
 ::-webkit-scrollbar {
   width: 1.25rem;
@@ -59,13 +60,7 @@ body {
 .container {
   display: grid;
   grid-template-rows: 6rem 6rem repeat(4, calc((100vh - 16rem) / 4)) 4rem;
-  grid-template-columns: [social-start] 6rem [social-end full-start] minmax(
-      6rem,
-      1fr
-    ) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(
-      6rem,
-      1fr
-    ) [full-end];
+  grid-template-columns: [social-start] 6rem [social-end full-start] 6rem [center-start] repeat(8, [col-start] calc((100vw - 18rem) / 8) [col-end]) [center-end] 6rem [full-end];
 
   position: relative;
   background-color: var(--bg-color);
