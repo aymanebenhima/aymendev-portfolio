@@ -1,6 +1,6 @@
 <template>
   <div class="projects">
-    <Card />
+    <Projects />
   </div>
 </template>
 
@@ -11,5 +11,7 @@ export default {
 </script>
 
 <style lang="scss">
-
+.projects {
+  overflow-y: hidden;
+}
 </style>
