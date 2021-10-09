@@ -7,7 +7,7 @@ export default {
     background: '#000',
     continuous: true
   },
-  // loading: '~/components/LoadingBar.vue',
+  // loading: '~/components/loading.vue',
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
