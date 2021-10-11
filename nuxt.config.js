@@ -64,14 +64,14 @@ export default {
     '@nuxtjs/axios',
     ['nuxt-mail', {
       message: {
-        to: 'de94b97b53-853f9a@inbox.mailtrap.io',
+        to: process.env.GMAIL_USER,
       },
       smtp: {
-        host: 'smtp.mailtrap.io',
-        port: 2525,
+        host: 'smtp.gmail.com',
+        port: 465,
         auth: {
-          user: process.env.USER,
-          pass: process.env.PASS
+          user: process.env.GMAIL_USER,
+          pass: process.env.GMAIL_PASSWORD
         }
       },
     }],
@@ -85,13 +85,17 @@ export default {
 
   publicRuntimeConfig: {
     axios: {
-      browserBaseURL: process.env.BROWSER_BASE_URL
+      browserBaseURL: process.env.BROWSER_BASE_URL,
+      proxyHeaders: false,
+      credentials: false
     }
   },
 
   privateRuntimeConfig: {
     axios: {
-      baseURL: process.env.BASE_URL
+      baseURL: process.env.BASE_URL,
+      proxyHeaders: false,
+      credentials: false
     }
   },
 
