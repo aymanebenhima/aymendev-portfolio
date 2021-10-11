@@ -79,6 +79,8 @@ export default {
 
   axios: {
     baseURL: 'http://localhost:3000', // Used as fallback if no runtime config is provided
+    proxyHeaders: false,
+    credentials: false
   },
 
   publicRuntimeConfig: {
