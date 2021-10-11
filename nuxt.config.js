@@ -64,14 +64,14 @@ export default {
     '@nuxtjs/axios',
     ['nuxt-mail', {
       message: {
-        to: process.env.GMAIL_USER,
+        to: 'de94b97b53-853f9a@inbox.mailtrap.io',
       },
       smtp: {
-        host: 'smtp.gmail.com',
-        port: 465,
+        host: 'smtp.mailtrap.io',
+        port: 2525,
         auth: {
-          user: process.env.GMAIL_USER,
-          pass: process.env.GMAIL_PASSWORD
+          user: process.env.USER,
+          pass: process.env.PASS
         }
       },
     }],
