@@ -85,13 +85,17 @@ export default {
 
   publicRuntimeConfig: {
     axios: {
-      browserBaseURL: process.env.BROWSER_BASE_URL
+      browserBaseURL: process.env.BROWSER_BASE_URL,
+      proxyHeaders: false,
+      credentials: false
     }
   },
 
   privateRuntimeConfig: {
     axios: {
-      baseURL: process.env.BASE_URL
+      baseURL: process.env.BASE_URL,
+      proxyHeaders: false,
+      credentials: false
     }
   },
 
