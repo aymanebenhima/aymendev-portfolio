@@ -24,7 +24,7 @@
         </div>
         <div class="description mb-3">
           <p class="about__title-primary">bachelor of modeling and environmental management</p>
-          <p class="about__title-secondary">Higher about__title-secondary of technologies - Cadi ayad university  |  2017 - 2018</p>
+          <p class="about__title-secondary">Higher school of technologies - Cadi ayad university  |  2017 - 2018</p>
           <ul class="about__items">
             <li>Member of Enactus.</li>
             <li>Thesis: Review of scientific studies on the Moroccan Atlantic coast.</li>
